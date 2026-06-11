@@ -1,0 +1,109 @@
+# Architecture
+
+## System Overview
+
+Build the requested product in small verified increments: Create a small implementation plan
+
+## Main Modules
+
+- Product/spec layer for requirements and acceptance criteria.
+- Application layer for user-facing workflows.
+- Persistence layer for project/run artifacts and execution history.
+- Safety layer for approvals, scoped execution, and command policy.
+
+## Data Model
+
+- Keep project/run metadata normalized.
+- Store generated artifacts as files under the run directory.
+- Store execution history as timeline steps and tool calls.
+
+## API / Integration Boundaries
+
+- Use backend APIs for all UI actions.
+- Keep project filesystem access scoped to configured project paths.
+- Route risky commands through approval gates.
+
+## UI Structure
+
+- Show spec, questions, plan, architecture, tasks, timeline, logs, and result per run.
+- Keep operator actions explicit and reversible where possible.
+
+## Testing Strategy
+
+- Add focused backend tests for every workflow transition.
+- Run configured project tests/builds only through safe commands.
+
+## Security and Safety Constraints
+
+- Never execute outside the selected project path.
+- Require approval for destructive commands, package installs, secrets, and git push.
+
+## Implementation Notes
+
+- Stack: python.
+- This fallback architecture was generated without Ollama.
+
+## Source Context
+
+### Product Spec
+## Product Goal
+
+Build a product that satisfies the user request: Create a small implementation plan
+
+## Target Users
+
+- Primary user is the project owner or operator.
+- Secondary users should be identified during implementation planning.
+
+## Core User Flows
+
+- Open the product and understand the primary action.
+- Complete the main task without manual developer intervention.
+- Review outputs, errors, and next steps clearly.
+
+## Functional Requirements
+
+- Translate the request into concrete implementation tasks.
+- Preserve project context and generated artifacts.
+- Keep all actions visible in the run timeline.
+- Require approval for risky commands or unclear destructive actions.
+
+## Non-Functional Requirements
+
+- Work in offline-first mode when possible.
+- Keep execution scoped to the selected project path.
+- Prefer safe, testable increments over large unverified changes.
+- Produce clear reports for each run.
+
+## Assumptions
+
+- Project ID: project-1.
+- Project Name: Demo.
+- Project Path: /tmp/project-1.
+- Project Stack: python.
+- Ollama was unavailable or failed, so this fallback spec is intentionally conservative.
+
+## Clarifying Questions
+
+- What is the target audience and primary use case?
+- What is the minimum feature set required for the first usable version?
+- Are there design references, brand rules, or UX expectations to follow?
+- Which platforms must be supported first?
+- What should count as done for this request?
+- Are there hidden constraints not mentioned in the original request: `Create a small implementation plan`?
+
+### Plan
+## Fallback Plan (Ollama unavailable)
+
+**Task:** Create a small implementation plan
+
+### Steps
+1. Analyze the task requirements
+2. Identify relevant files and components
+3. Implement changes (requires manual execution)
+4. Run tests to verify
+5. Create documentation
+
+*Note: This is a fallback plan generated without AI assistance. Start Ollama and retry for a detailed AI-generated plan.*
+
+

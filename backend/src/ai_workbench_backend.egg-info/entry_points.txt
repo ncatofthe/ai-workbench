@@ -1,0 +1,2 @@
+[console_scripts]
+workbench = src.cli:app

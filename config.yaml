@@ -1,0 +1,48 @@
+# AI Workbench Configuration
+# Default operating mode: offline | hybrid | cloud
+default_mode: offline
+# Provider routing mode: local | hybrid | cloud
+provider_mode: local
+
+ollama:
+  base_url: http://localhost:11434
+  default_model: qwen3-coder:30b
+  fast_model: qwen2.5-coder:7b
+  timeout_seconds: 300
+
+codex:
+  enabled: false
+  # codex_path: codex  # path to codex CLI binary
+  # require_approval: true
+
+claude:
+  enabled: false
+  # claude_path: claude  # path to claude CLI binary
+  # require_approval: true
+
+safety:
+  require_approval_for:
+    - shell_exec
+    - package_install
+    - file_delete
+    - git_push
+    - git_force_push
+    - docker_compose_down
+    - env_file_modify
+    - system_file_modify
+    - npm_publish
+    - pip_install
+  max_retries: 3
+  sandbox_enabled: true
+
+storage:
+  database: sqlite
+  db_path: ./data/workbench.db
+
+server:
+  host: 0.0.0.0
+  port: 8000
+  reload: true
+
+frontend:
+  port: 5173
