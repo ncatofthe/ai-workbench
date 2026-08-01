@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+
+# Runtime state
+data/*.db
+data/*.db-*
+backups/
+exports/
+runs/*.log
+runs/*.diff
+
+# Local config and OS files
+.env
+.env.*
+.DS_Store
